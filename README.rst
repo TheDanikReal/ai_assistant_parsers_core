@@ -49,7 +49,7 @@ AI Assistant Parsers Core - это ядро библиотеки, предост
 
        def __init__(self) -> None:
            super().__init__(
-               supported_subdomains=["rgust.ru"],  # Парсим страницы, которые не умеют поддомена
+               supported_subdomains=["rgust.ru"],  # Парсим страницы, которые не имеют поддомена
                select_arguments=[
                    "section.content",  # Тег, содержащий основной контент
                ],
@@ -59,7 +59,7 @@ AI Assistant Parsers Core - это ядро библиотеки, предост
            clean_one_by_select(soup, ".breadcrumb")  # Очищаем `.breadcrumb`
 
        def _restructure_parsed_html(self, soup: BeautifulSoup) -> None:
-           rename_all_by_select(soup, "p.main-page-faculty-widget-programs-header", "h2")  # Зачем `p` HTML-тег на `h2`
+           rename_all_by_select(soup, "p.main-page-faculty-widget-programs-header", "h2")  # Затем `p` HTML-тег на `h2`
 
 
 Больше примеров!
